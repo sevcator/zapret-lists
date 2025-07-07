@@ -20,19 +20,19 @@ jobs:
           curl -sfL https://raw.githubusercontent.com/V3nilla/IPSets-For-Bypass-in-Russia/main/ipset-amazon.txt -o /tmp/ipset1.txt || true
           curl -sfL https://raw.githubusercontent.com/V3nilla/IPSets-For-Bypass-in-Russia/main/ipset-cloudflare.txt -o /tmp/ipset2.txt || true
           cat /tmp/ipset1.txt /tmp/ipset2.txt > ./module/ipset/ipset-all.txt || true
-          curl -sfL https://raw.githubusercontent.com/bol-van/rulist/main/reestr_hostname.txt -o ./module/list/reestr_hostname.txt || true
+          curl -sfL https://raw.githubusercontent.com/bol-van/rulist/refs/heads/main/reestr_hostname_resolvable.txt -o ./module/list/reestr.txt || true
           
       - name: Filter subdomains
         shell: bash
         run: |
-          sort -u ./module/list/reestr_hostname.txt | grep -v '^$' > /tmp/reestr_hostname_sorted.txt
+          sort -u ./module/list/reestr.txt | grep -v '^$' > /tmp/reestr_sorted.txt
           awk -F. '
           {
             n = split($0, a, ".");
             if (n >= 2) {
               print a[n-1] "." a[n];
             }
-          }' /tmp/reestr_hostname_sorted.txt | sort -u > /tmp/base_domains.txt
+          }' /tmp/reestr_sorted.txt | sort -u > /tmp/base_domains.txt
           awk -F. '
           BEGIN {
             while ((getline < "/tmp/base_domains.txt") > 0) {
@@ -44,12 +44,12 @@ jobs:
             if (!base[domain] || $0 == domain) {
               print $0;
             }
-          }' /tmp/reestr_hostname_sorted.txt > ./module/list/reestr_hostname.txt
+          }' /tmp/reestr_sorted.txt > ./module/list/reestr.txt
 
       - name: Push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add module/ipset/ipset-all.txt module/list/reestr_hostname.txt
+          git add module/ipset/ipset-all.txt module/list/reestr.txt
           git diff --cached --quiet || git commit -m "Update at $(date +'%Y-%m-%d %H:%M:%S')"
           git push origin HEAD:main || echo "No changes to push"
