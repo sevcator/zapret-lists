@@ -20,7 +20,7 @@ jobs:
           curl -sfL https://raw.githubusercontent.com/V3nilla/IPSets-For-Bypass-in-Russia/main/ipset-amazon.txt -o /tmp/ipset1.txt || true
           curl -sfL https://raw.githubusercontent.com/V3nilla/IPSets-For-Bypass-in-Russia/main/ipset-cloudflare.txt -o /tmp/ipset2.txt || true
           cat /tmp/ipset1.txt /tmp/ipset2.txt > ./module/ipset/ipset-all.txt || true
-          curl -sfL https://raw.githubusercontent.com/bol-van/rulist/refs/heads/main/reestr_hostname.txt -o ./module/list/reestr.txt || true
+          curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o ./module/list/reestr.txt || true
           
       - name: Filter subdomains
         shell: bash
