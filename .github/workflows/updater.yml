@@ -15,25 +15,14 @@ jobs:
 
       - name: Download files
         run: |
-          mkdir -p module/ipset module/list
-          curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o module/list/reestr.txt || true
-          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/ipset.py -o module/ipset/ipset.py || true
-          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/subdomains.py -o module/list/subdomains.py || true
-
-      - name: Get IPset
-        run: |
+          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/ipset.py -o ipset.py || true
           pip3 install requests
-          python3 module/ipset/ipset.py
-
-      - name: Filter subdomains
-        run: |
-          python3 module/list/subdomains.py
+          python3 ipset.py
 
       - name: Commit and push changes
         run: |
-          ls -l module/ipset
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add module/ipset/ipset.txt module/list/reestr.txt
+          git add ipset.txt
           git diff --cached --quiet || git commit -m "Update at $(date +'%Y-%m-%d %H:%M:%S')"
           git push origin HEAD:main || echo "No changes to push"
