@@ -2,53 +2,34 @@ name: Update
 
 on:
   schedule:
-  - cron: '0 */2 * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch:
-      
+
 jobs:
   update:
-    name: Update
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Download files
-        shell: bash
         run: |
           mkdir -p module/ipset module/list
-          curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o ./module/list/reestr.txt || true
-          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/refs/heads/main/.github/workflows/working/ipset.py -o ./module/ipset/ipset.py | true
-          sudo apt-get install python -y
-          pip3 install requests
-          cd ./module/ipset/ipset.py
-          python3 ipset.py
-          
-      - name: Filter subdomains
-        shell: bash
-        run: |
-          sort -u ./module/list/reestr.txt | grep -v '^$' > /tmp/reestr_sorted.txt
-          awk -F. '
-          {
-            n = split($0, a, ".");
-            if (n >= 2) {
-              print a[n-1] "." a[n];
-            }
-          }' /tmp/reestr_sorted.txt | sort -u > /tmp/base_domains.txt
-          awk -F. '
-          BEGIN {
-            while ((getline < "/tmp/base_domains.txt") > 0) {
-              base[$0] = 1;
-            }
-          }
-          {
-            domain = $(NF-1) "." $NF;
-            if (!base[domain] || $0 == domain) {
-              print $0;
-            }
-          }' /tmp/reestr_sorted.txt > ./module/list/reestr.txt
+          curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o module/list/reestr.txt || true
+          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/ipset.py -o module/ipset/ipset.py || true
+          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/filter_domains.py -o module/ipset/filter_domains.py || true
 
-      - name: Push changes
+      - name: Run ipset.py
+        run: |
+          pip3 install requests
+          python3 module/ipset/ipset.py
+
+      - name: Filter subdomains
+        run: |
+          python3 module/ipset/filter_domains.py
+
+      - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
