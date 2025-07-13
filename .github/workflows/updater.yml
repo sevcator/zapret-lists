@@ -19,7 +19,7 @@ jobs:
           mkdir -p module/ipset module/list
           curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o ./module/list/reestr.txt || true
           curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/refs/heads/main/.github/workflows/working/ipset.py -o ./module/ipset/ipset.py | true
-          apt-get install python
+          sudo apt-get install python
           pip install requests
           cd ./module/ipset/ipset.py
           python ipset.py
