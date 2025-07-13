@@ -15,9 +15,9 @@ jobs:
 
       - name: Download files
         run: |
-          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/ipset.py -o ipset.py || true
+          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/generate-ipset.py -o generate-ipset.py || true
           pip3 install requests
-          python3 ipset.py
+          python3 generate-ipset.py
 
       - name: Commit and push changes
         run: |
