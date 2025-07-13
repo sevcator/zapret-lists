@@ -1,4 +1,4 @@
-name: Update Lists
+name: Update
 
 on:
   schedule:
@@ -16,11 +16,13 @@ jobs:
       - name: Download files
         shell: bash
         run: |
-          mkdir -p module/ipset module/dnscrypt module/list
-          curl -sfL https://raw.githubusercontent.com/V3nilla/IPSets-For-Bypass-in-Russia/main/ipset-amazon.txt -o /tmp/ipset1.txt || true
-          curl -sfL https://raw.githubusercontent.com/V3nilla/IPSets-For-Bypass-in-Russia/main/ipset-cloudflare.txt -o /tmp/ipset2.txt || true
-          cat /tmp/ipset1.txt /tmp/ipset2.txt > ./module/ipset/ipset-all.txt || true
+          mkdir -p module/ipset module/list
           curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o ./module/list/reestr.txt || true
+          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/refs/heads/main/.github/workflows/working/ipset.py -o ./module/ipset/ipset.py | true
+          apt-get install python
+          pip install requests
+          cd ./module/ipset/ipset.py
+          python ipset.py
           
       - name: Filter subdomains
         shell: bash
@@ -50,6 +52,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add module/ipset/ipset-all.txt module/list/reestr.txt
+          git add module/ipset/ipset.txt module/list/reestr.txt
           git diff --cached --quiet || git commit -m "Update at $(date +'%Y-%m-%d %H:%M:%S')"
           git push origin HEAD:main || echo "No changes to push"
