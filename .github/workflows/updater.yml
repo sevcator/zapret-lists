@@ -18,7 +18,7 @@ jobs:
           mkdir -p module/ipset module/list
           curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o module/list/reestr.txt || true
           curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/ipset.py -o module/ipset/ipset.py || true
-          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/subdomains.py -o module/ipset/filter_domains.py || true
+          curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/subdomains.py -o module/list/subdomains.py || true
 
       - name: Get IPset
         run: |
