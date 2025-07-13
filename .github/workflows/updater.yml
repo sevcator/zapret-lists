@@ -31,6 +31,7 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          ls -l module/ipset
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add module/ipset/ipset.txt module/list/reestr.txt
