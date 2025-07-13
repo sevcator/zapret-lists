@@ -2,7 +2,7 @@ import re, requests
 
 url = "https://raw.githubusercontent.com/bol-van/rulist/refs/heads/main/reestr_hostname.txt"
 allowed_tlds = ('.org', '.com', '.eu', '.xxx', '.to')
-whitelist_patterns = ['rezka.ag', 'rutracker', 'ntc.party', 'prostovpn.org', 'rule34', 'paheal', 'e621.net', 'yande.re', 'pixiv', 'zerochan.net', 'donmai.us']
+whitelist_patterns = ['rezka.ag', 'rutracker', 'ntc.party', 'prostovpn.org', 'rule34', 'paheal', 'e621.net', 'yande.re', 'pixiv', 'zerochan.net', 'donmai.us', '4pda']
 banned_keywords = ['kraken', 'zoo', 'poker', 'azino', 'asino', 'flibus.ta', 'flibusta', 'narko', 'luxury', 'slot', 'lucky', 'bet', 'avto', 'btc', 'bnb', 'usdt', 'ltc', 'bitcoin', 'litecoin', 'binance', 'crypto', 'onion', 'tor', 'market', 'shop', 'darknet', 'mef', 'ukraine', 'ulkan', 'crypto', 'trading', 'trade', 'admiral', 'lord', 'kino', 'kolhoz', 'kolxoz', 'gold', 'hydra', 'leon', 'immediate', 'kra', 'niger', 'save', 'egas', 'play', 'dj', 'dl', 'online', 'forum', 'world', 'die', 'death', 'navalny', 'putin', 'vpn', 'proxy', 'parimatch', 'sport', 'call', 'vip', 'diamond', 'pasport', 'passport', 'pay', 'pin-', 'child', 'loli', 'deti', 'gay', 'trans', 'gender', 'film', 'king']
 
 r = requests.get(url)
