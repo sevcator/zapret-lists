@@ -1,9 +1,7 @@
 import requests
 
-ASNS = ["AS12322", "AS12876", "AS13335", "AS14061", "AS14618", "AS16276", "AS16509", "AS199524", "AS20473", "AS20940", "AS24940", "AS31898", "AS36352", "AS48031", "AS54113", "AS60068", "AS60781", "AS62563", "AS8075", "AS8560"]OUTPUT_DIR = "module/ipset"
-
-OUTPUT_DIR = "module/ipset"
-OUTPUT_FILE = os.path.join(OUTPUT_DIR, "ipset.txt")
+ASNS = ["AS12322", "AS12876", "AS13335", "AS14061", "AS14618", "AS16276", "AS16509", "AS199524", "AS20473", "AS20940", "AS24940", "AS31898", "AS36352", "AS48031", "AS54113", "AS60068", "AS60781", "AS62563", "AS8075", "AS8560"]
+OUTPUT_FILE = "ipset.txt"
 
 def get_cidrs_by_asn(asn):
     url = f"https://stat.ripe.net/data/announced-prefixes/data.json?resource={asn}"
