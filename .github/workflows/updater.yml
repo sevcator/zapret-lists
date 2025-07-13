@@ -19,10 +19,10 @@ jobs:
           mkdir -p module/ipset module/list
           curl -sfL https://antizapret.prostovpn.org/domains-export.txt -o ./module/list/reestr.txt || true
           curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/refs/heads/main/.github/workflows/working/ipset.py -o ./module/ipset/ipset.py | true
-          sudo apt-get install python
-          pip install requests
+          sudo apt-get install python -y
+          pip3 install requests
           cd ./module/ipset/ipset.py
-          python ipset.py
+          python3 ipset.py
           
       - name: Filter subdomains
         shell: bash
