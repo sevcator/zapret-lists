@@ -15,6 +15,9 @@ jobs:
 
       - name: Download files
         run: |
+          ls -ln
+          cd .github
+          ls
           curl -sfL https://raw.githubusercontent.com/sevcator/zapret-lists/main/.github/workflows/working/generate-ipset.py -o generate-ipset.py || true
           pip3 install requests
           python3 generate-ipset.py
