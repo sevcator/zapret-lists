@@ -17,6 +17,7 @@ jobs:
         run: |
           pip3 install requests
           python3 .github/workflows/working/generate-ipset.py
+          python3 .github/workflows/working/generate-rulist-by-filters.py
 
       - name: Commit and push changes
         run: |
