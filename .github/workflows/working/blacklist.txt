@@ -67,6 +67,7 @@ extra
 extreme
 fake
 family
+fap
 father
 female
 flibus.ta
@@ -121,6 +122,7 @@ moscow
 moskva
 moskwa
 mother
+nadzor
 narko
 navalny
 niger
