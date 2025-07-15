@@ -6,6 +6,7 @@
 =info
 =mef
 =rus
+=vk
 =win
 =x.com
 7tv
@@ -63,6 +64,7 @@ docs
 documents
 dollar
 dom
+donetsk
 dostup
 dosug
 dox
@@ -85,6 +87,7 @@ forum
 free
 friend
 fuck
+gambler
 game
 gay
 gender
@@ -102,14 +105,17 @@ hate
 hating
 hell
 hemale
+hide
 hospital
 human
 hydra
+hype
 immediate
 info
 instagram
 invest
 jerk
+joy
 kazak
 kid
 kill
@@ -129,6 +135,7 @@ luxury
 mail
 market
 mature
+mobile
 money
 moscow
 moskva
@@ -155,7 +162,7 @@ phone
 photo
 pics
 pin-
-pinco
+pinc
 pins-
 pizza
 play
@@ -169,6 +176,8 @@ rabota
 rezka
 russia
 save
+secur
+serial
 shemale
 shop
 signal
