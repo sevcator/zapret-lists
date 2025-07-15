@@ -8,6 +8,7 @@
 =rus
 =ua
 =vk
+=war
 =win
 =x.com
 7tv
@@ -82,6 +83,7 @@ family
 fap
 father
 female
+film
 flibus.ta
 flibusta
 forum
@@ -90,16 +92,19 @@ friend
 fuck
 gambler
 game
+garant
 gay
 gender
 ggpht
 girl
+glaz
 global
 glory
 gold
 google
 gore
 gorie
+grand
 group
 guide
 hate
@@ -122,6 +127,7 @@ kid
 kill
 king
 kino
+knife
 kolhoz
 kolxoz
 kra
@@ -175,6 +181,7 @@ pussy
 putin
 rabota
 rezka
+royal
 russia
 save
 secur
@@ -211,6 +218,7 @@ ulcan
 ulkan
 usdt
 vava
+victory
 vip
 vpn
 wallet
