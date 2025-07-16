@@ -147,6 +147,7 @@ market
 mature
 mobile
 money
+moria
 moscow
 moskva
 moskwa
