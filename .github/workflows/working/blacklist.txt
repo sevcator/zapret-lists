@@ -6,6 +6,7 @@
 =hot
 =info
 =mef
+=mega
 =rus
 =ua
 =vk
