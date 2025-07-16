@@ -1,5 +1,4 @@
 .ua
-=cock
 =fbcdn
 =gei
 =gej
