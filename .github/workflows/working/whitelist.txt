@@ -4,6 +4,7 @@
 =anifap
 =donmai.us
 =e621.net
+=e926.net
 =jut.su
 =nnmclub.to
 =ntc.party
