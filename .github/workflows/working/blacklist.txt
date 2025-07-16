@@ -1,4 +1,5 @@
 .ua
+=air
 =fbcdn
 =gei
 =gej
@@ -39,6 +40,7 @@ bonus
 boy
 brother
 btc
+bybit
 cafe
 call
 cam
@@ -195,8 +197,10 @@ shemale
 shop
 signal
 sister
+sliv
 slot
 sndcdn
+snus
 soundcloud
 space
 star
