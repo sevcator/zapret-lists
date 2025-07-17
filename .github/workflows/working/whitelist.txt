@@ -26,4 +26,5 @@
 =zerochan.net
 anime
 booru
+hentai
 manga
