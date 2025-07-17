@@ -22,7 +22,7 @@ def load_patterns(filename):
 whitelist_contains, whitelist_startswith = load_patterns(".github/workflows/working/whitelist.txt")
 blacklist_contains, blacklist_startswith = load_patterns(".github/workflows/working/blacklist.txt")
 
-allowed_tlds = ('.com','.org','.net','.us','.app','.biz','.fm','.tv','.is','.wtf','.xyz')
+allowed_tlds = ('.com','.org','.net','.app','.fm','.tv')
 
 res = set()
 
