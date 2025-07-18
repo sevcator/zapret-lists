@@ -1,14 +1,19 @@
 .ua
 =air
+=aptek
+=club
 =fbcdn
 =gei
 =gej
 =hot
 =info
+=intim
 =kr
 =lesbi
 =mef
 =mega
+=prav
+=praw
 =rus
 =ua
 =vk
@@ -98,6 +103,7 @@ forum
 free
 friend
 fuck
+funds
 gambler
 game
 garant
@@ -133,6 +139,7 @@ jerk
 joy
 kazak
 kid
+kiev
 kill
 king
 kino
@@ -208,6 +215,7 @@ shemale
 shop
 signal
 sister
+skam
 sliv
 slot
 sndcdn
