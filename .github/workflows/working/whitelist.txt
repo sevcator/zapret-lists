@@ -6,6 +6,9 @@
 =anistar
 =bato.to
 =donmai.us
+=dorama.live
+=doramalive.ru
+=doramy.club
 =e621.net
 =e926.net
 =ficbook
