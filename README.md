@@ -1,4 +1,4 @@
-This lists or ipsets focused for ГРАЖДАНИНАМ РОССИЙСКОЙ ФЕДЕРАЦИИ!
+This things focused for ГРАЖДАНИНАМ РОССИЙСКОЙ ФЕДЕРАЦИИ!
 
 [ipset.txt](https://github.com/sevcator/zapret-lists/blob/main/ipset.txt) - ipset hosting providers
 Based on ASN Hosting providers, idea and lists of providers by [LeonMskRu](https://github.com/LeonMskRu/arti_windows/tree/main/TEMP)
