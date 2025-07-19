@@ -23,6 +23,6 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add ipset.txt reestr_filtered.txt
+          git add ipset-v4.txt ipset-v6.txt reestr_filtered.txt
           git diff --cached --quiet || git commit -m "Update at $(date +'%Y-%m-%d %H:%M:%S')"
           git push origin HEAD:main || echo "No changes to push"
