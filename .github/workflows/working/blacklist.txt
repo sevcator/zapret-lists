@@ -235,6 +235,7 @@ star
 stand
 steal
 stream
+stroy
 spin
 sport
 sushi
@@ -288,3 +289,4 @@ young
 zona
 zoo
 zzz
+
