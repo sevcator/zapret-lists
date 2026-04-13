@@ -24,6 +24,6 @@ jobs:
           git config user.name "sevcator"
           git config user.email "68725282+sevcator@users.noreply.github.com"
           git add reestr_filtered.txt
-          git add ipset.txt
+          git add ipset-service.txt
           git diff --cached --quiet || git commit -m "⚡ Update at $(date +'%Y-%m-%d %H:%M:%S')"
           git push origin HEAD:main || echo "No changes to push"
