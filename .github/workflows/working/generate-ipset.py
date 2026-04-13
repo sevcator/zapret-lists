@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 import requests
 
 SUITE_URL = "https://raw.githubusercontent.com/hyperion-cs/dpi-checkers/refs/heads/main/ru/tcp-16-20/suite.json"
-OUTPUT_FILE = "ipset.txt"
+OUTPUT_FILE = "ipset-service.txt"
 
 REQUEST_TIMEOUT = 15
 
